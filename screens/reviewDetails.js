@@ -10,7 +10,6 @@ export default function ReviewDetails({ route }) {
             <Text>{ title }</Text>
             <Text>{ body }</Text>
             <Text>{ rating }</Text>
-
         </View>
     )
 }
