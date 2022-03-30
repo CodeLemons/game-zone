@@ -9,6 +9,6 @@ export default function HomeStack() {
         <Stack.Navigator>
           <Stack.Screen name="Home" component={DrawerNavigator} options={{headerShown: false}}/>
           <Stack.Screen name="ReviewDetails" component={ReviewDetails} />
-        </Stack.Navigator>
+        </Stack.Navigator> 
     )
 }
