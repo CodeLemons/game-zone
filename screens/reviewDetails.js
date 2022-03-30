@@ -1,10 +1,14 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Button } from "react-native";
 import { globalStyles } from "../styles/global";
 
-export default function ReviewDetails({ route }) {
+export default function ReviewDetails({ route, navigation }) {
     
     const { title, body, rating } = route.params;
     
+    const pressHandler = () => {
+        navigation.navigate('Home');
+    }
+
     return (
         <View style={globalStyles.container}>
             <Text>{ title }</Text>

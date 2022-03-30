@@ -1,17 +1,16 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import ReviewDetails from './screens/reviewDetails';
 import AppLoading from 'expo-app-loading';
-import Home from './screens/home';
+import 'react-native-gesture-handler';
 import * as Font from 'expo-font';
 import { useState } from 'react';
+import DrawerNavigator from './routes/drawerNavigator';
+import HomeStack from './routes/homeStack';
 
 const getFonts = () => Font.loadAsync({
     'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
     'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
 });
 
-const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
@@ -19,18 +18,8 @@ export default function App() {
   if(fontsLoaded){
     return (
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-            name="Home" 
-            component={Home} 
-            options={{ title: 'GameZone' }}
-          />
-          <Stack.Screen
-            name="ReviewDetails" 
-            component={ReviewDetails}
-            options={{ title: 'Review Details' }} 
-          />
-        </Stack.Navigator>
+        {/* <DrawerNavigator />  */}
+        <HomeStack />
       </NavigationContainer>
     );
   } else {
