@@ -1,10 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
+import HomeStack from './routes/homeStack';
 import AppLoading from 'expo-app-loading';
 import 'react-native-gesture-handler';
 import * as Font from 'expo-font';
 import { useState } from 'react';
-import DrawerNavigator from './routes/drawerNavigator';
-import HomeStack from './routes/homeStack';
 
 const getFonts = () => Font.loadAsync({
     'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
@@ -18,7 +17,6 @@ export default function App() {
   if(fontsLoaded){
     return (
       <NavigationContainer>
-        {/* <DrawerNavigator />  */}
         <HomeStack />
       </NavigationContainer>
     );
