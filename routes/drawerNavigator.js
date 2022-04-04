@@ -2,6 +2,7 @@ import { createDrawerNavigator} from '@react-navigation/drawer';
 import About from '../screens/about';
 import Home from '../screens/home';
 import Header from '../shared/header';
+import HeaderBg from '../shared/headerBg';
 
 const Drawer = createDrawerNavigator();
 
@@ -13,7 +14,8 @@ export default function DrawerNavigator() {
                 component={Home}
                 headerMode='float'
                 options={{
-                    headerTitle: (props) => <Header {...props}/>, 
+                    headerTitle: (props) => <Header {...props}/>,
+                    headerBackground: () => <HeaderBg /> 
                 }}
                     
             />
