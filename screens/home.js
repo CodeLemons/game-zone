@@ -1,9 +1,10 @@
-import { StyleSheet, View, Text, FlatList, TouchableOpacity, Modal } from "react-native";
+import { StyleSheet, View, Text, FlatList, TouchableOpacity, Modal,
+     TouchableWithoutFeedback, Keyboard } from "react-native";
 import { globalStyles } from "../styles/global";
 import React, { useState } from 'react';
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
-
+import ReviewForm from './reviewForm';
 
 export default function Home({ navigation }) {
 
@@ -15,20 +16,30 @@ export default function Home({ navigation }) {
         { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
       ]);
 
+    const addReview = (review) => {
+        review.key = Math.random().toString();
+        setReviews((currentReviews) => {
+            return [review, ...currentReviews]
+        });
+        setModalOpen(false);
+    }
+    
+    
     return (
         <View style={globalStyles.container}>
             <Modal visible={modalOpen} animationType='slide'>
-                <View style={styles.modalContent}>
-                    <MaterialIcons 
-                        name='close'
-                        size={24}
-                        style={{ ...styles.modalToggle, ...styles.modalClose }}
-                        onPress={() => setModalOpen(false)}
-                    />
-                    <Text>Hello from the modal</Text>
-                </View>
+                <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+                    <View style={styles.modalContent}>
+                        <MaterialIcons 
+                            name='close'
+                            size={24}
+                            style={{ ...styles.modalToggle, ...styles.modalClose }}
+                            onPress={() => setModalOpen(false)}
+                        />
+                        <ReviewForm addReview={addReview}/>
+                    </View>
+                </TouchableWithoutFeedback>
             </Modal>
-
             <MaterialIcons 
                 name='add'
                 size={24}
