@@ -4,7 +4,7 @@ import { globalStyles } from "../styles/global";
 export default function About() {
     return (
         <View style={globalStyles.container}>
-            <Text>About Screen</Text>
+            <Text>Version 1.0.0</Text>
         </View>
     )
 }
