@@ -41,6 +41,7 @@ export default function ReviewForm({ addReview }) {
 
                         <TextInput
                             multiline 
+                            minHeight={80}
                             style={globalStyles.input}
                             placeholder='Review body'
                             onChangeText={formikProps.handleChange('body')}
