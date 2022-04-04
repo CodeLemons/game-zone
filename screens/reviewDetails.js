@@ -11,7 +11,6 @@ export default function ReviewDetails({ route }) {
             <Card>
                 <Text>{ title }</Text>
                 <Text>{ body }</Text>
-                {/* <Text>{ rating }</Text> */}
                 <View style={styles.rating}>
                     <Text>GameZone rating: </Text>
                     <Image source={images.ratings[rating]} />

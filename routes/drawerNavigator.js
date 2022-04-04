@@ -14,7 +14,6 @@ export default function DrawerNavigator() {
                 headerMode='float'
                 options={{
                     headerTitle: (props) => <Header {...props}/>, 
-                    headerStyle: {backgroundColor: '#ccc', height: 100}
                 }}
                     
             />
@@ -24,7 +23,6 @@ export default function DrawerNavigator() {
                 headerMode='float' 
                 options={{
                     headerTitle: (props) => <Header {...props}/>, 
-                    headerStyle: {backgroundColor: '#ccc', height: 100}
                 }}
             />
         </Drawer.Navigator>
